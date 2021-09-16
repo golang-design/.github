@@ -2,7 +2,7 @@
 
 ## ![](https://golang.org/favicon.ico)  This is the [golang.design](https://golang.design) initiative. A Go community.
 
-Yes, we are using Go to build developer resources, and we’ve been doing this Sep, 2020.
+Yes, we are using Go to build developer resources, and we’ve been doing this since Sep, 2020.
 
 ## ⚙️ Package and Services
 
