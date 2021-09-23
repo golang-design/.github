@@ -36,3 +36,5 @@ More importantly, we created a documentary to help everyone to find interesting 
 - [golang-design/history](https://golang.design/history): 📝 Go: A Documentary
 
 Enjoy, and we would love to receive your contributions :)
+
+<img src="https://changkun.de/urlstat?mode=github&repo=golang-design/.github" alt="logo" align="right" />
