@@ -58,7 +58,8 @@ NANOGO_ALLOWLIST=./allowlist go build -toolexec=nanogo ./...
 Set `NANOGO_LOG=./log` and it records what it compiled, what it handed back, and
 what it turned down. It refuses closures, `append`, type assertions, `defer`,
 maps and channels today, so most Go programs will not build. A refusal names the
-function and the construct instead of emitting something wrong. The measure of the project is compiling its own source to a fixed point.
+function and the construct instead of emitting something wrong. The measure of
+the project is compiling its own source to a fixed point.
 
 **[Follow along](https://golang.design/s/nanogo)** · [pkg.go.dev](https://pkg.go.dev/golang.design/x/nanogo)
 
