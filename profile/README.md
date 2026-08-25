@@ -58,8 +58,7 @@ NANOGO_ALLOWLIST=./allowlist go build -toolexec=nanogo ./...
 Set `NANOGO_LOG=./log` and it records what it compiled, what it handed back, and
 what it turned down. It refuses closures, `append`, type assertions, `defer`,
 maps and channels today, so most Go programs will not build. A refusal names the
-function and the construct instead of emitting something wrong. The project is
-finished when it compiles its own source to a fixed point.
+function and the construct instead of emitting something wrong. The measure of the project is compiling its own source to a fixed point.
 
 **[Follow along](https://golang.design/s/nanogo)** · [pkg.go.dev](https://pkg.go.dev/golang.design/x/nanogo)
 
@@ -69,18 +68,18 @@ finished when it compiles its own source to a fixed point.
 | --- | --- | --- |
 | [`golang.design/x/clipboard`](https://golang.design/s/clipboard) | Read, write and watch the system clipboard: text, images, files and your own MIME types. macOS, Linux (X11 and Wayland), Windows, BSD, iOS, Android, js/wasm. Cgo-free on desktop. | `v0.9.0` |
 | [`golang.design/x/hotkey`](https://golang.design/s/hotkey) | Register a system-wide shortcut and get an event when it fires, whether or not your window has focus. macOS, Linux (X11), Windows. | `v0.6.1` |
-| [`golang.design/x/runtime`](https://golang.design/s/runtime) | The runtime knobs the standard library does not export: goroutine IDs, OS-thread caps, `mainthread` for the API that insists on thread 1, `thread` and `cgo`. | `v0.3.0` |
+| [`golang.design/x/runtime`](https://golang.design/s/runtime) | The runtime knobs the standard library does not export: goroutine IDs, OS-thread caps, `mainthread` for the platform API that only accepts calls from the main thread, plus `thread` and `cgo`. | `v0.3.0` |
 | [`golang.design/x/x11`](https://golang.design/s/x11) | Talk to an X server over its socket in pure Go. No cgo, no `libX11`, no display server assumptions. | `v0.2.0` |
-| [`golang.design/x/chann`](https://golang.design/s/chann) | One generic channel type that is buffered, unbuffered or unbounded depending on how you construct it, so a producer never blocks by accident. | `v0.2.1` |
+| [`golang.design/x/chann`](https://golang.design/s/chann) | One generic channel type that is buffered, unbuffered or unbounded depending on how you construct it. Pick unbounded and a send never blocks. | `v0.2.1` |
 | [`golang.design/x/lockfree`](https://golang.design/s/lockfree) | Concurrent data structures sorted by the guarantee they actually give you: import `lf` for lock-free, `wf` for wait-free. Each type documents its own progress bound. | `v0.1.0` |
-| [`golang.design/x/reflect`](https://golang.design/s/reflect) | A generic `DeepCopy[T]`, the external implementation of proposal [go.dev/issue/51520](https://go.dev/issue/51520). | `v0.1.1` |
+| [`golang.design/x/reflect`](https://golang.design/s/reflect) | `DeepCopy[T any](src T) T`, which copies a value including unexported struct fields and hands back a fully independent one. The external implementation of proposal [go.dev/issue/51520](https://go.dev/issue/51520). | `v0.1.1` |
 
 ## Tools
 
 - **[Go SSA Playground](https://golang.design/gossa)**: paste Go, read the SSA the compiler builds from it
-- **[bench](https://golang.design/s/bench)**: `benchstat` and `perflock` behind one command, so a benchmark run is reproducible by default
+- **[bench](https://golang.design/s/bench)**: `benchstat` and `perflock` behind one command, so a benchmark run is performance-locked and statistically analyzed without extra flags
 - **[redir](https://golang.design/s/redir)**: the redirector serving every `golang.design/s/` link on this page
-- **[code2img](https://golang.design/s/code2img)**: turn a snippet into an image, from the shell or an iOS Shortcut
+- **[code2img](https://golang.design/s/code2img)**: turn a snippet into an image through the carbon.now.sh API, with an iOS Shortcut included
 - **[tgstore](https://golang.design/s/tgstore)**: encrypted object storage with no size limit, backed by Telegram
 
 ## Read
