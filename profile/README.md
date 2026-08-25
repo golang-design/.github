@@ -39,11 +39,11 @@ D3D12, OpenGL and WebGPU are designed, not written.
 
 [Guide](https://golang.design/s/accel) · [pkg.go.dev](https://pkg.go.dev/golang.design/x/accel)
 
-### nanogo: a Go compiler you can read end to end
+### nanogo: a second Go compiler, small enough to read
 
-Source text to a `goobj` file that `go tool link` links against the real Go
-runtime, under a budget of 40,000 lines. You point the go command at it per
-package, and everything else still goes through `gc`.
+`nanogo` compiles Go source to a `goobj` file that `go tool link` links against
+the real Go runtime. You opt in per package, so the rest of your build still
+goes through `gc`.
 
 ```sh
 go install golang.design/x/nanogo/cmd/nanogo@latest
@@ -53,8 +53,8 @@ NANOGO_ALLOWLIST=./allowlist go build -toolexec=nanogo ./...
 
 It turns down closures, `append`, type assertions, `defer`, maps and channels
 today, so most Go programs will not build, and a refusal names the function and
-the construct instead of emitting something wrong. The measure of the project is
-compiling its own source to a fixed point.
+the construct instead of emitting something wrong. The goal is to compile its
+own source.
 
 [Follow along](https://golang.design/s/nanogo) · [pkg.go.dev](https://pkg.go.dev/golang.design/x/nanogo)
 
